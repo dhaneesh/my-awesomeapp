@@ -60,6 +60,7 @@ jobs:
           eb --version
 
           echo "Deploy init"
+          eb use Myawesomeapp-env
           echo "eb init -i ${{env.APP_NAME}} -p ${{env.AWS_PLATFORM}} -k SampleKeyPair --region ${{env.AWS_REGION}}"
           eb init -i ${{env.APP_NAME}} -p ${{env.AWS_PLATFORM}} -k SampleKeyPair --region ${{env.AWS_REGION}}
           eb deploy ${{env.APP_NAME}} --version ${AWS_VERSION_LABEL}
